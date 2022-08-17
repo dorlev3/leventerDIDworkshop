@@ -15,7 +15,7 @@
 #' @examples
 #' df <- sim_data_mean_shift()
 sim_data_mean_shift <- function(nobs = 300,
-                                ngroup = 3,
+                                ngroups = 3,
                                 group_treat_order = c(1, 2, 3),
                                 years = c(1980, 2010),
                                 group_treat_time = c(1990, 2000, 9999),
@@ -66,7 +66,7 @@ sim_data_mean_shift <- function(nobs = 300,
 #' @examples
 #' df <- sim_data_trend_shift()
 sim_data_trend_shift <- function(nobs = 300,
-                                 ngroup = 3,
+                                 ngroups = 3,
                                  group_treat_order = c(1, 2, 3),
                                  years = c(1980, 2010),
                                  group_treat_time = c(1990, 2000, 9999),
