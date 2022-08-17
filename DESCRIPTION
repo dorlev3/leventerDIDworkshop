@@ -1,0 +1,11 @@
+Package: leventerDIDworkshop
+Type: Package
+Title: Utility Functions for a Workshop in Diff-in-Diff
+Version: 0.1.0
+Author: Dor Leventer
+Maintainer: Dor Leventer <dorleventer@mail.tau.ac.il>
+Description: Utility functions for DID workshop.
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+imports: data.table
