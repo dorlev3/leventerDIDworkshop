@@ -9,3 +9,4 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 imports: data.table
+RoxygenNote: 7.2.1
