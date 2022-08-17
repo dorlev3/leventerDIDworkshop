@@ -24,17 +24,17 @@ sim_data_mean_shift <- function(nobs = 300,
 
   set.seed(seed)
   dat = CJ(id = 1:nobs, year = years[1]:years[2])[
-    , state := sample(1:ngroups, 1), by = "id"][
+    , treat_group := sample(1:ngroups, 1), by = "id"][
       , year_fe := rnorm(1, mean = 0, sd = 1), by = "year"][
-        , unit_fe := rnorm(1, mean = state, sd = 1), by = "id"]
+        , unit_fe := rnorm(1, mean = treat_group, sd = 1), by = "id"]
 
-  setkey(dat, state, id, year)
+  setkey(dat, treat_group, id, year)
 
   treatment_groups = data.table(
-    state = group_treat_order,
+    treat_group = group_treat_order,
     cohort = group_treat_time,
     tau = tau_vec)
-  dat = treatment_groups[dat, roll = TRUE, on = "state"]
+  dat = treatment_groups[dat, roll = TRUE, on = "treat_group"]
 
   dat                                                [
     , treat  := as.numeric(year >= cohort)          ][
@@ -75,17 +75,17 @@ sim_data_trend_shift <- function(nobs = 300,
 
   set.seed(seed)
   dat = CJ(id = 1:nobs, year = years[1]:years[2])[
-    , state := sample(1:ngroups, 1), by = "id"][
+    , treat_group := sample(1:ngroups, 1), by = "id"][
       , year_fe := rnorm(1, mean = 0, sd = 1), by = "year"][
-        , unit_fe := rnorm(1, mean = state, sd = 1), by = "id"]
+        , unit_fe := rnorm(1, mean = treat_group, sd = 1), by = "id"]
 
-  setkey(dat, state, id, year)
+  setkey(dat, treat_group, id, year)
 
   treatment_groups = data.table(
-    state = group_treat_order,
+    treat_group = group_treat_order,
     cohort = group_treat_time,
     tau = tau_vec)
-  dat = treatment_groups[dat, roll = TRUE, on = "state"]
+  dat = treatment_groups[dat, roll = TRUE, on = "treat_group"]
 
   dat                                                [
     , treat  := as.numeric(year >= cohort)          ][
