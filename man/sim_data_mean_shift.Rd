@@ -6,7 +6,7 @@
 \usage{
 sim_data_mean_shift(
   nobs = 300,
-  ngroup = 3,
+  ngroups = 3,
   group_treat_order = c(1, 2, 3),
   years = c(1980, 2010),
   group_treat_time = c(1990, 2000, 9999),
@@ -17,6 +17,8 @@ sim_data_mean_shift(
 \arguments{
 \item{nobs}{Number of observations}
 
+\item{ngroups}{Number of groups}
+
 \item{group_treat_order}{Order of group treatment. If groups have same treatment timing, then omit from argument. For example, if three groups (ngroups = 3), and groups 1 and 2 are both treated at same time, input is: 'group_treat_timing = c(1,3)'}
 
 \item{years}{Minimum and maximum time periods}
@@ -26,8 +28,6 @@ sim_data_mean_shift(
 \item{tau_vec}{A vector of treatment effects. For hetergenous data-sets, simply input different numbers, e.g. 'tau_vec = c(1,.5)'}
 
 \item{seed}{A random seed}
-
-\item{ngroups}{Number of groups}
 }
 \value{
 A simulated data frame for DID analysis.

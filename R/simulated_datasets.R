@@ -24,7 +24,7 @@ sim_data_mean_shift <- function(nobs = 300,
 
   set.seed(seed)
   dat = CJ(id = 1:nobs, year = years[1]:years[2])[
-    , state := sample(1:ngroup, 1), by = "id"][
+    , state := sample(1:ngroups, 1), by = "id"][
       , year_fe := rnorm(1, mean = 0, sd = 1), by = "year"][
         , unit_fe := rnorm(1, mean = state, sd = 1), by = "id"]
 
@@ -75,7 +75,7 @@ sim_data_trend_shift <- function(nobs = 300,
 
   set.seed(seed)
   dat = CJ(id = 1:nobs, year = years[1]:years[2])[
-    , state := sample(1:ngroup, 1), by = "id"][
+    , state := sample(1:ngroups, 1), by = "id"][
       , year_fe := rnorm(1, mean = 0, sd = 1), by = "year"][
         , unit_fe := rnorm(1, mean = state, sd = 1), by = "id"]
 
